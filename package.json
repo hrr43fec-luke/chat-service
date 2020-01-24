@@ -1,10 +1,13 @@
 {
   "name": "chat-service",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server/index.js",
   "repository": "https://github.com/hrr43fec-luke/chat-service",
   "author": "Kraig Hanson <KraigGit@GMail.Com>",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon --watch"
+  },
   "devDependencies": {
     "@babel/cli": "^7.8.3",
     "@babel/core": "^7.8.3",
@@ -20,6 +23,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "faker": "^4.1.0",
     "mongoose": "^5.8.9",
     "react": "^16.12.0",
