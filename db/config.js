@@ -1,6 +1,6 @@
 const dbName = 'luke-chat';
 const dbURL = 'mongodb://localhost';
-const dbPort = 27017;
+const dbPort = 3012;
 
 module.exports = {
   dbName,

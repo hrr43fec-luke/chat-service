@@ -4,7 +4,8 @@ const Model = require('./Model.js');
 
 const router = express.Router();
 
-// app.use(express.static('dist'));
+router.use(express.static('www'));
+
 router.get('/favicon.ico', (req, res) => {
   res.end();
 });
