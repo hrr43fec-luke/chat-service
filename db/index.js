@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const dbconfig = require('./config.js');
 const schema = require('./schema.js');
 
-mongoose.connect(`${dbconfig.dbURL}:${dbconfig.dbPort}/${dbconfig.dbName}`, {
+module.exports.connect = () => mongoose.connect(`${dbconfig.dbURL}:${dbconfig.dbPort}/${dbconfig.dbName}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
-const Chat = mongoose.model('Chat', schema);
+module.exports.disconnect = () => mongoose.disconnect();
 
-module.exports = () => Chat;
+module.exports.Chat = mongoose.model('Chat', schema);

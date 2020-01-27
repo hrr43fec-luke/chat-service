@@ -5,5 +5,9 @@ module.exports = {
     "arrow-parens": ["off"],
     "no-plusplus": ["off"],
     "no-console": ["off"],
+  },
+  "env": {
+    "jest": true,
+    "browser": true,
   }
 };

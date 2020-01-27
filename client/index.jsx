@@ -1,7 +1,9 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
+const Chats = require('./Chats.jsx');
+
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <Chats />,
   document.getElementById('app'),
 );
