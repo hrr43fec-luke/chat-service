@@ -11,14 +11,19 @@ function Chat({ chat }) {
           {formatTime(chat.messageTimestamp)}
         </span>
         <span className="chatMessage">
-          <img className="chatBadge" src={chat.chatBadge} />
+          <img
+            className="chatBadge"
+            src={chat.chatBadge}
+            alt="User's Chat Badge"
+          />
           <span
             className="chatUserName"
             style={{ color: chat.displayNameColor }}
           >
             {chat.displayName}
           </span>
-          : {chat.message}
+          :
+          {` ${chat.message}`}
         </span>
       </div>
     </div>
