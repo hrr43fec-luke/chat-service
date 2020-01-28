@@ -26,7 +26,7 @@ class Chats extends React.Component {
   render() {
     const { chats } = this.state;
     return (
-      <div>
+      <div className="chats">
         {chats.map((c) => <Chat key={c._id} chat={c} />)}
       </div>
     );

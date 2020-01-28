@@ -1,0 +1,30 @@
+.chatWrapper {
+  margin-bottom: 4px;
+}
+
+.chat {
+  display: flex;
+  width: 339px;
+  font-family: 'Helvetica, Arial, sans-serif';
+  font-size: 12px;
+}
+
+.chatTime {
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.chatBadge {
+  height: 18px;
+  width: 18px;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: sub;
+}
+
+.chatUserName {
+}
+
+.chatMessage {
+  margin-left: 4px;
+}

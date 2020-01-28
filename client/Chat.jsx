@@ -1,17 +1,26 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
+const formatTime = require('./formatTime');
+
 function Chat({ chat }) {
   return (
-    <div>
-      Time:
-      {chat.messageTimestamp}
-      Badge:
-      {chat.chatBadge}
-      Name:
-      {chat.displayName}
-      Message:
-      {chat.message}
+    <div className="chatWrapper">
+      <div className="chat">
+        <span className="chatTime">
+          {formatTime(chat.messageTimestamp)}
+        </span>
+        <span className="chatMessage">
+          <img className="chatBadge" src={chat.chatBadge} />
+          <span
+            className="chatUserName"
+            style={{ color: chat.displayNameColor }}
+          >
+            {chat.displayName}
+          </span>
+          : {chat.message}
+        </span>
+      </div>
     </div>
   );
 }
