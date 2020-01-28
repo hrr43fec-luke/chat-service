@@ -5,7 +5,7 @@ const schema = require('./schema.js');
 
 const dbName = 'luke-chat';
 const dbURL = 'mongodb://localhost';
-const dbPort = 27017;
+const dbPort = 3012;
 
 mongoose.connect(`${dbURL}:${dbPort}/${dbName}`, {
   useNewUrlParser: true,
@@ -21,6 +21,7 @@ mongoose.connect(`${dbURL}:${dbPort}/${dbName}`, {
       arr.push({
         userName: faker.internet.userName(),
         displayName: faker.internet.userName(),
+        displayNameColor: faker.internet.color(),
         chatBadge: faker.internet.avatar(),
         message: faker.lorem.sentence(),
         videoId: Math.floor(Math.random() * 10) + 1,

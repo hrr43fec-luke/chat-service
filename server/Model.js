@@ -1,8 +1,8 @@
-const db = require('../db');
+const db = require('../db').Chat;
 
 const Model = {
   getChatsForVid: (videoId) => new Promise((resolve, reject) => {
-    db().find({ videoId })
+    db.find({ videoId })
       .then(results => {
         resolve(results);
       })
