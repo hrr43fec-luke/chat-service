@@ -1,4 +1,4 @@
-const Model = require('./Model');
+const Model = require('../server/Model');
 const db = require('../db');
 
 beforeAll(() => db.connect());
