@@ -14,12 +14,20 @@ describe('<Chat />', () => {
     message: 'foo message foo foo bar baz',
     messageTimestamp: 333.3,
   };
+
+  const wrapper = shallow(<Chat chat={chat} />);
+
   it('Testing if expected class names exist when Chat is rendered.', () => {
-    const wrapper = shallow(<Chat chat={chat} />);
     expect(wrapper.find('.chatWrapper').exists()).toBe(true);
     expect(wrapper.find('.chat').exists()).toBe(true);
     expect(wrapper.find('.chatTime').exists()).toBe(true);
     expect(wrapper.find('.chatBadge').exists()).toBe(true);
     expect(wrapper.find('.chatUserName').exists()).toBe(true);
+  });
+
+  it('Testing if expected data exists when Chat is rendered.', () => {
+    expect(wrapper.debug()).toMatch(chat.displayName);
+    expect(wrapper.debug()).toMatch(chat.message);
+    expect(wrapper.debug()).toMatch('5:33'); // 333.33 seconds
   });
 });

@@ -13,14 +13,13 @@ class Chats extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`${api}/2`)
-      .then(response => {
-        console.log('Received response from server');
-        response.json()
-          .then(body => {
-            this.setState({ chats: body });
-          });
-      });
+    return fetch(`${api}/2`)
+      .then(response => response.json())
+      .then(body => {
+        this.setState({ chats: body });
+        return body;
+      })
+      .catch(error => console.error(error));
   }
 
   render() {
