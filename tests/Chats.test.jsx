@@ -7,12 +7,10 @@ import Chats from '../client/Chats';
 
 configure({ adapter: new Adapter() });
 
-const didMount = async (ComponentClass) => {
+const didMount = async (ComponentClass, props) => {
   const lifecycleMethod = spy(ComponentClass.prototype, 'componentDidMount');
 
-  // original line below changed to pass airbnb (and I don't need props for this test)
-  // const wrapper = shallow(<ComponentClass {...props} />);
-  const wrapper = shallow(<ComponentClass />);
+  const wrapper = shallow(<ComponentClass {...props} />);
 
   await lifecycleMethod.returnValues[0];
   lifecycleMethod.restore();
@@ -62,7 +60,7 @@ describe('<Chats />', () => {
 
       fetch.mockResponseOnce(JSON.stringify(chats));
 
-      const wrapper = await didMount(Chats);
+      const wrapper = await didMount(Chats, { userId: 1 });
 
       expect(wrapper.find('.chats').exists()).toBe(true);
       expect(wrapper.find('.chats').children().length).toBe(3);
@@ -70,13 +68,19 @@ describe('<Chats />', () => {
 
   test('Does the Chats component call console.error on errors?',
     async () => {
-      const spyConsoleError = jest.spyOn(global.console, 'error');
+      const errMsg = 'fake error from test suite';
+      let receivedErrMsg;
 
-      fetch.mockReject(new Error('fake error from test suite'));
+      const spyConsoleError = jest.spyOn(global.console, 'error').mockImplementation(err => {
+        receivedErrMsg = err;
+      });
 
-      await didMount(Chats);
+      fetch.mockReject(new Error(errMsg));
+
+      await didMount(Chats, { userId: 1 });
 
       expect(spyConsoleError).toHaveBeenCalled();
+      expect(`Error: ${errMsg}`).toBe(receivedErrMsg.toString());
 
       spyConsoleError.mockRestore();
     });

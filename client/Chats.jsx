@@ -1,4 +1,5 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 
 const Chat = require('./Chat.jsx');
 const api = require('../server/api');
@@ -9,11 +10,13 @@ class Chats extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.state.userId = props.userId;
     this.state.chats = [];
   }
 
   componentDidMount() {
-    return fetch(`${api}/2`)
+    const { userId } = this.state;
+    return fetch(`${api}/${userId}`)
       .then(response => response.json())
       .then(body => {
         this.setState({ chats: body });
@@ -31,5 +34,9 @@ class Chats extends React.Component {
     );
   }
 }
+
+Chats.propTypes = {
+  userId: PropTypes.number.isRequired,
+};
 
 module.exports = Chats;
