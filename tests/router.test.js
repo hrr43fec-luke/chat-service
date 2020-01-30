@@ -20,7 +20,7 @@ describe('', () => {
       .get('/api/chats/2')
       .expect(200)
       .expect('Content-Type', /json/)
-      .expect(/Aylin78/, done);
+      .expect(/Cynthia_Wilderman/, done);
   });
 
   it('serves up index.html', (done) => {

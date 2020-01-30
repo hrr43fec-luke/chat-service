@@ -17,12 +17,13 @@ mongoose.connect(`${dbURL}:${dbPort}/${dbName}`, {
     const Chat = mongoose.model('Chat', schema);
 
     const arr = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 250; i++) {
       arr.push({
         userName: faker.internet.userName(),
         displayName: faker.internet.userName(),
         displayNameColor: faker.internet.color(),
         chatBadge: faker.internet.avatar(),
+        chatBadgeText: `${faker.lorem.word()} ${faker.lorem.word()}`,
         message: faker.lorem.sentence(),
         videoId: Math.floor(Math.random() * 10) + 1,
         messageTimestamp: Math.random() * 10,

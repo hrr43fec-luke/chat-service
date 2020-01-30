@@ -5,6 +5,7 @@ const chatSchema = new mongoose.Schema({
   displayName: String,
   displayNameColor: String,
   chatBadge: String,
+  chatBadgeText: String,
   message: String,
   videoId: Number,
   messageTimestamp: Number,
