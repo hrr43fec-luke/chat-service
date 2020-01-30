@@ -10,17 +10,6 @@ test(
   }),
 );
 
-test('Does Model return different data for users 1 and 2?', (done) => {
-  Promise.all([
-    Model.getChatsForVid(1),
-    Model.getChatsForVid(2),
-  ])
-    .then(data => {
-      expect(data[0][0]._id).not.toBe(data[1][0]._id);
-      done();
-    });
-});
-
 // This test is needed for 100% code coverage, but would require
 // me to mock out db.find and generate the error. It's not worth
 // the time.
