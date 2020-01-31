@@ -2,7 +2,7 @@ const db = require('../db').Chat;
 
 const Model = {
   getChatsForVid: (videoId) => new Promise((resolve, reject) => {
-    db.find({ videoId })
+    db.find({ videoId }, null, { sort: { messageTimestamp: 1 } })
       .then(results => {
         resolve(results);
       })

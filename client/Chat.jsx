@@ -7,15 +7,25 @@ function Chat({ chat }) {
   return (
     <div className="chatWrapper">
       <div className="chat">
-        <span className="chatTime">
-          {formatTime(chat.messageTimestamp)}
+        <span className="chatToolTip chatHoverBackground">
+          <span className="chatTime chatToolTip chatHoverBackground">
+            {formatTime(chat.messageTimestamp)}
+          </span>
+          <span className="chatToolTipText">
+            Jump to video
+          </span>
         </span>
         <span className="chatMessage">
-          <img
-            className="chatBadge"
-            src={chat.chatBadge}
-            alt="User's Chat Badge"
-          />
+          <span className="chatToolTip">
+            <img
+              className="chatBadge"
+              src={chat.chatBadge}
+              alt="User's Chat Badge"
+            />
+            <span className="chatToolTipText">
+              {chat.chatBadgeText}
+            </span>
+          </span>
           <span
             className="chatUserName"
             style={{ color: chat.displayNameColor }}
@@ -34,6 +44,7 @@ Chat.propTypes = {
     displayName: PropTypes.string.isRequired,
     displayNameColor: PropTypes.string.isRequired,
     chatBadge: PropTypes.string.isRequired,
+    chatBadgeText: PropTypes.string.isRequired,
     message: PropTypes.string.isRequired,
     messageTimestamp: PropTypes.number.isRequired,
   }).isRequired,
