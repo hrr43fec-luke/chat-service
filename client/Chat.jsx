@@ -1,52 +1,37 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const { default: styled } = require('styled-components');
 
-const formatTime = require('./formatTime');
+const TimeStamp = require('./TimeStamp.jsx');
+const Badge = require('./Badge.jsx');
+const DisplayName = require('./DisplayName.jsx');
+const Message = require('./Message.jsx');
+
+const StyledChat = styled.section`
+  display: flex;
+`;
 
 function Chat({ chat }) {
   return (
-    <div className="chatWrapper">
-      <div className="chat">
-        <span className="chatToolTip chatHoverBackground">
-          <span className="chatTime chatToolTip chatHoverBackground">
-            {formatTime(chat.messageTimestamp)}
-          </span>
-          <span className="chatToolTipText">
-            Jump to video
-          </span>
-        </span>
-        <span className="chatMessage">
-          <span className="chatToolTip">
-            <img
-              className="chatBadge"
-              src={chat.chatBadge}
-              alt="User's Chat Badge"
-            />
-            <span className="chatToolTipText">
-              {chat.chatBadgeText}
-            </span>
-          </span>
-          <span
-            className="chatUserName"
-            style={{ color: chat.displayNameColor }}
-          >
-            {chat.displayName}
-          </span>
-          :
-          {` ${chat.message}`}
-        </span>
-      </div>
-    </div>
+    <StyledChat>
+      <TimeStamp timeStamp={chat.timeStamp} />
+      <span>
+        <Badge badge={chat.badge} />
+        <DisplayName displayName={chat.displayName} displayNameColor={chat.displayNameColor} />
+        {': '}
+        <Message message={chat.message} />
+      </span>
+    </StyledChat>
   );
 }
 Chat.propTypes = {
   chat: PropTypes.shape({
     displayName: PropTypes.string.isRequired,
     displayNameColor: PropTypes.string.isRequired,
-    chatBadge: PropTypes.string.isRequired,
-    chatBadgeText: PropTypes.string.isRequired,
+    badge: PropTypes.string.isRequired,
+    badgeText: PropTypes.string.isRequired,
     message: PropTypes.string.isRequired,
-    messageTimestamp: PropTypes.number.isRequired,
+    timeStamp: PropTypes.number.isRequired,
   }).isRequired,
 };
 

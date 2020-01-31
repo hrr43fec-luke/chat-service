@@ -5,8 +5,8 @@
       {
         "modules": false,
         "targets": {
-          "node": "current",
-        },
+          "node": "current"
+        }
       }
     ],
     [
@@ -16,8 +16,12 @@
   "env": {
     "test": {
       "plugins": [
+        "babel-plugin-styled-components",
         "transform-es2015-modules-commonjs"
       ]
     }
-  }
+  },
+  "plugins": [
+    "babel-plugin-styled-components"
+  ]
 }

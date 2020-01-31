@@ -1,9 +1,14 @@
 const React = require('react');
+const { default: styled } = require('styled-components');
 
 const Chat = require('./Chat.jsx');
 const api = require('../server/api');
 
-// 1px border, 339px content
+const StyledChats = styled.div`
+  width: 339px;
+  font-family: Roobert, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+`;
 
 class Chats extends React.Component {
   constructor(props) {
@@ -25,9 +30,9 @@ class Chats extends React.Component {
   render() {
     const { chats } = this.state;
     return (
-      <div className="chats">
+      <StyledChats>
         {chats.map((c) => <Chat key={c._id} chat={c} />)}
-      </div>
+      </StyledChats>
     );
   }
 }

@@ -8,12 +8,12 @@ configure({ adapter: new Adapter() });
 
 describe('<Chat />', () => {
   const chat = {
-    displayName: 'fooUserName',
+    displayName: 'foouserName',
     displayNameColor: '#800000',
-    chatBadge: '',
-    chatBadgeText: 'badge msg',
+    badge: '',
+    badgeText: 'badge msg',
     message: 'foo message foo foo bar baz',
-    messageTimestamp: 333.3,
+    timeStamp: 333.3,
   };
 
   const wrapper = shallow(<Chat chat={chat} />);
@@ -22,7 +22,7 @@ describe('<Chat />', () => {
     expect(wrapper.find('.chatWrapper').exists()).toBe(true);
     expect(wrapper.find('.chat').exists()).toBe(true);
     expect(wrapper.find('.chatTime').exists()).toBe(true);
-    expect(wrapper.find('.chatBadge').exists()).toBe(true);
+    expect(wrapper.find('.badge').exists()).toBe(true);
     expect(wrapper.find('.chatUserName').exists()).toBe(true);
     expect(wrapper.find('.chatToolTip').exists()).toBe(true);
   });
