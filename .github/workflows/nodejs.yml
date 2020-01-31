@@ -1,8 +1,12 @@
 name: Node.js CI
 
-on: [push]
-
+on: []
+  
 jobs:
+  container-job:
+    runs-on: [ubuntu-latest]
+    container: node:13
+
   build:
 
     runs-on: ubuntu-latest
