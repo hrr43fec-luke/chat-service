@@ -4,11 +4,11 @@ const chatSchema = new mongoose.Schema({
   userName: String,
   displayName: String,
   displayNameColor: String,
-  chatBadge: String,
-  chatBadgeText: String,
+  badge: String,
+  badgeText: String,
   message: String,
   videoId: Number,
-  messageTimestamp: Number,
+  timeStamp: Number,
 });
 
 module.exports = chatSchema;
