@@ -6,14 +6,16 @@ const ToolTip = require('./ToolTip.jsx');
 const formatTime = require('./formatTime');
 
 const StyledTimeStamp = styled.span`
+  color: #1f1f23;
   position: relative;  
   display: inline-block;
   font-size: 11px;
-  padding: 2px;
-  margin-top: 3px;
+  padding: 1px 4px;
+  margin-right: 5px;
   height: 12px;
   color: ${props => (props.hover ? 'white' : '')};
   background: ${props => (props.hover ? 'purple' : '')};
+  cursor: ${props => (props.hover ? 'pointer' : '')};
 `;
 
 const tip = 'Jump to video';

@@ -7,6 +7,16 @@ const ToolTip = require('./ToolTip.jsx');
 const StyledBadge = styled.span`
   position: relative;  
   display: inline-block;
+  margin-right: 4px;
+  vertical-align: top;
+  margin-top: -3px;
+  height: 18px;
+  width: 18px;
+`;
+
+const StyledImg = styled.img`
+  height: 18px;
+  width: 18px;
 `;
 
 class Badge extends React.Component {
@@ -15,7 +25,7 @@ class Badge extends React.Component {
 
     this.state = {};
     this.state.badge = props.badge;
-    // this.state.badge something
+    this.state.badgeText = props.badgeText;
     this.state.hover = false;
 
     this.toggleHover = this.toggleHover.bind(this);
@@ -27,24 +37,24 @@ class Badge extends React.Component {
   }
 
   render() {
-    const { badge, hover } = this.state;
+    const { badge, badgeText, hover } = this.state;
     return (
       <StyledBadge
         onMouseEnter={this.toggleHover}
         onMouseLeave={this.toggleHover}
       >
-        <img
-          className="badge"
+        <StyledImg
           src={badge}
           alt="User's Chat Badge"
         />
-        <ToolTip hidden={!hover} text="Temp text" />
+        <ToolTip hidden={!hover} text={badgeText} />
       </StyledBadge>
     );
   }
 }
 Badge.propTypes = {
   badge: PropTypes.string.isRequired,
+  badgeText: PropTypes.string.isRequired,
 };
 
 module.exports = Badge;

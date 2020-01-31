@@ -21,7 +21,7 @@ const StyledToolTip = styled.span`
 const StyledToolTipArrow = styled.span`
   position: absolute;
   top: 100%;
-  left: 12%;
+  left: 10px;
   margin-left: -4px;
   border-width: 4px;
   border-style: solid;
