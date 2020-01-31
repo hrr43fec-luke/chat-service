@@ -1,10 +1,11 @@
 const express = require('express');
 
+const env = require('./environment');
 const db = require('../db');
 const router = require('./router');
 
 const app = express();
-const port = 3002;
+const port = env.serverPort;
 
 app.use(router);
 

@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "nodemon --watch server",
+    "start": "nodemon --watch server --watch db --watch .env",
     "build": "webpack --watch",
     "test": "jest",
     "seed": "mongoimport --port=3012 --db=luke-chat --collection=chats --file=./db/standardData.json",
@@ -64,6 +64,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "mongoose": "^5.8.9",
