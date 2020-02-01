@@ -10,7 +10,7 @@
     "start": "nodemon --watch server --watch db --watch .env",
     "build": "webpack --watch",
     "test": "jest",
-    "seed": "mongoimport --port=3012 --db=luke-chat --collection=chats --file=./db/standardData.json",
+    "seed": "mongoimport --port=27017 --db=luke-chat --collection=chats --file=./db/standardData.json",
     "makeFakeData": "node db/fakeTheData.js",
     "expressDebugOn": "export DEBUG=express:*",
     "expressDebugOff": "export DEBUG="
