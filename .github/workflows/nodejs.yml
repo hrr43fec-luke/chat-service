@@ -1,12 +1,8 @@
 name: Node.js CI
 
-on: []
+on: [push]
   
 jobs:
-  container-job:
-    runs-on: [ubuntu-latest]
-    container: node:13
-
   build:
 
     runs-on: ubuntu-latest
@@ -14,6 +10,12 @@ jobs:
     strategy:
       matrix:
         node-version: [13.x]
+
+    services:
+      mongodb:
+        image: mongo:3.4.23
+        ports:
+          - 27107:27017
 
     steps:
     - uses: actions/checkout@v2
@@ -23,6 +25,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm run build --if-present
+    - run: sudo apt install mongo-tools
+    - run: npm run seed
     - run: npm test
       env:
         CI: true
+        DB_PORT: 27017
+        DB_HOST: localhost
