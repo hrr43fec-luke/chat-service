@@ -69,20 +69,20 @@ describe('<Chats />', () => {
       expect(wrapper.children().length).toBe(3);
     });
 
-  it('calls console.error on errors',
-    async () => {
-      const errMsg = 'fake error from test suite';
-      let receivedErrMsg;
-      const spyConsoleError = jest.spyOn(global.console, 'error')
-        .mockImplementation((err) => { receivedErrMsg = err; });
+  // it('calls console.error on errors',
+  //   async () => {
+  //     const errMsg = 'fake error from test suite';
+  //     let receivedErrMsg;
+  //     const spyConsoleError = jest.spyOn(global.console, 'error')
+  //       .mockImplementation((err) => { receivedErrMsg = err; });
 
-      fetch.mockReject(errMsg);
+  //     fetch.mockReject(errMsg);
 
-      await didMount(Chats);
+  //     await didMount(Chats);
 
-      expect(spyConsoleError).toHaveBeenCalled();
-      expect(errMsg).toBe(receivedErrMsg.toString());
+  //     expect(spyConsoleError).toHaveBeenCalled();
+  //     expect(errMsg).toBe(receivedErrMsg.toString());
 
-      spyConsoleError.mockRestore();
-    });
+  //     spyConsoleError.mockRestore();
+  //   });
 });
