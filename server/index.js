@@ -11,5 +11,5 @@ app.use(router);
 
 db.connect()
   .then(() => {
-    app.listen(port, () => console.log(`Listening on port ${port}!`));
+    app.listen(port, null);
   });

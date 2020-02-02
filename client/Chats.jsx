@@ -23,18 +23,19 @@ class Chats extends React.Component {
   componentDidMount() {
     const { userId } = this.state;
     return fetch(`${api}/${userId}`)
-      .then(response => response.json())
-      .then(body => {
+      .then((response) => response.json())
+      .then((body) => {
         this.setState({ chats: body });
         return body;
-      })
-      .catch(error => console.error(error));
+      });
+    // .catch((error) => console.error(error));
   }
 
   render() {
     const { chats } = this.state;
     return (
       <StyledChats>
+        {/* eslint-disable-next-line no-underscore-dangle */}
         {chats.map((c) => <Chat key={c._id} chat={c} />)}
       </StyledChats>
     );

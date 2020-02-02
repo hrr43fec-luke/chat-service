@@ -18,7 +18,7 @@ router.get('/favicon.ico', (req, res) => {
 
 router.get(`${api}/:videoId`, (req, res) => {
   Model.getChatsForVid(req.params.videoId)
-    .then(results => res.send(results));
+    .then((results) => res.send(results));
 });
 
 module.exports = router;

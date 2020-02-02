@@ -27,8 +27,8 @@ describe('', () => {
     request(app)
       .get('/')
       .expect(200)
-      .expect(/<!DOCTYPE html>/, done)
-  })
+      .expect(/<!DOCTYPE html>/, done);
+  });
 });
 
 afterAll(() => db.disconnect());

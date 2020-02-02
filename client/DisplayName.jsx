@@ -3,9 +3,9 @@ const PropTypes = require('prop-types');
 const { default: styled } = require('styled-components');
 
 const StyledDisplayName = styled.span`
-  color: ${props => props.color};
-  text-decoration: ${props => (props.hover ? 'underline' : '')};
-  cursor: ${props => (props.hover ? 'pointer' : '')};
+  color: ${(props) => props.color};
+  text-decoration: ${(props) => (props.hover ? 'underline' : '')};
+  cursor: ${(props) => (props.hover ? 'pointer' : '')};
 `;
 
 class DisplayName extends React.Component {
