@@ -3,10 +3,10 @@ const db = require('../db').Chat;
 const Model = {
   getChatsForVid: (videoId) => new Promise((resolve, reject) => {
     db.find({ videoId }, null, { sort: { timeStamp: 1 } })
-      .then(results => {
+      .then((results) => {
         resolve(results);
       })
-      .catch(error => { reject(error); });
+      .catch((error) => { reject(error); });
   }),
 };
 

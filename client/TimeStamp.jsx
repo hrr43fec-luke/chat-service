@@ -13,9 +13,9 @@ const StyledTimeStamp = styled.span`
   padding: 1px 4px;
   margin-right: 5px;
   height: 12px;
-  color: ${props => (props.hover ? 'white' : '')};
-  background: ${props => (props.hover ? 'purple' : '')};
-  cursor: ${props => (props.hover ? 'pointer' : '')};
+  color: ${(props) => (props.hover ? 'white' : '')};
+  background: ${(props) => (props.hover ? 'purple' : '')};
+  cursor: ${(props) => (props.hover ? 'pointer' : '')};
 `;
 
 const tip = 'Jump to video';

@@ -12,12 +12,10 @@ mongoose.connect(`${dbURL}:${dbPort}/${dbName}`, {
   useUnifiedTopology: true,
 })
   .then(() => {
-    console.log('connected to DB!');
-
     const Chat = mongoose.model('Chat', schema);
 
     const arr = [];
-    for (let i = 0; i < 250; i++) {
+    for (let i = 0; i < 250; i += 1) {
       arr.push({
         userName: faker.internet.userName(),
         displayName: faker.internet.userName(),
@@ -32,8 +30,8 @@ mongoose.connect(`${dbURL}:${dbPort}/${dbName}`, {
 
     Chat.create(arr)
       .then(() => {
-        console.log('all promises complete');
         mongoose.disconnect();
       });
   })
-  .catch(error => { console.error('couldnt connect to db', error); });
+  // eslint-disable-next-line no-console
+  .catch((error) => { console.error('couldn\'t connect to db', error); });

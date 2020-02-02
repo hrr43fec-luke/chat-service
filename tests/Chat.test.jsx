@@ -23,5 +23,4 @@ describe('<Chat />', () => {
     expect(wrapper.debug()).toMatch(chat.message);
     expect(wrapper.debug()).toMatch(chat.timeStamp.toString());
   });
-
 });

@@ -10,6 +10,7 @@ configure({ adapter: new Adapter() });
 const didMount = async (ComponentClass, props) => {
   const lifecycleMethod = spy(ComponentClass.prototype, 'componentDidMount');
 
+  // eslint-disable-next-line react/jsx-props-no-spreading
   const wrapper = shallow(<ComponentClass {...props} />);
 
   await lifecycleMethod.returnValues[0];
@@ -63,7 +64,7 @@ describe('<Chats />', () => {
 
       fetch.mockResponseOnce(JSON.stringify(chats));
 
-      const wrapper = await didMount(Chats, {userId: 2});
+      const wrapper = await didMount(Chats, { userId: 2 });
 
       expect(wrapper.children().length).toBe(3);
     });
@@ -73,7 +74,7 @@ describe('<Chats />', () => {
       const errMsg = 'fake error from test suite';
       let receivedErrMsg;
       const spyConsoleError = jest.spyOn(global.console, 'error')
-        .mockImplementation(err => { receivedErrMsg = err; });
+        .mockImplementation((err) => { receivedErrMsg = err; });
 
       fetch.mockReject(errMsg);
 

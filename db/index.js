@@ -9,7 +9,7 @@ const dbURL = `mongodb://${env.dbHost}`;
 module.exports.connect = () => mongoose.connect(`${dbURL}:${env.dbPort}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  dbName: dbName,
+  dbName,
   user: env.dbUser,
   pass: env.dbPwd,
 });
