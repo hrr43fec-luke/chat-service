@@ -3,7 +3,7 @@ const PropTypes = require('prop-types');
 const { default: styled } = require('styled-components');
 
 const StyledToolTip = styled.span`
-  visibility: ${props => (props.hidden ? 'hidden' : 'visible')};
+  visibility: ${(props) => (props.hidden ? 'hidden' : 'visible')};
   font-size: 12px;
   background: black;
   color: white;
