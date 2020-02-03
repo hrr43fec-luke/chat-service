@@ -1,7 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
   entry: './client/index.jsx',
   output: {
     filename: 'main.js',
@@ -27,7 +26,7 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-        ]
+        ],
       },
     ],
   },

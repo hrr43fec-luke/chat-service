@@ -8,8 +8,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon --watch server --watch db --watch .env",
-    "build": "webpack --watch",
-    "build": "webpack",
+    "build:dev": "webpack --watch --mode development",
+    "build": "webpack --mode production",
     "test": "jest",
     "seed": "mongoimport --port=27017 --db=luke-chat --collection=chats --file=./db/standardData.json",
     "makeFakeData": "node db/fakeTheData.js",

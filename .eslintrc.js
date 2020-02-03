@@ -1,4 +1,5 @@
 module.exports = {
+  "ignorePatterns": ["node_modules/", "www/main*"],
   "extends": ["airbnb"],
   "rules": {
     "linebreak-style": ["off"],
