@@ -6,9 +6,12 @@ const Chat = require('./Chat.jsx');
 const api = require('../server/api');
 
 const StyledChats = styled.div`
-  width: 339px;
   font-family: Roobert, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
 `;
 
 class Chats extends React.Component {
@@ -18,7 +21,6 @@ class Chats extends React.Component {
     this.state.userId = props.userId;
     this.state.chats = [];
   }
-
 
   componentDidMount() {
     const { userId } = this.state;
@@ -33,6 +35,7 @@ class Chats extends React.Component {
 
   render() {
     const { chats } = this.state;
+    // const c2 = chats.slice(0, 2);
     return (
       <StyledChats>
         {/* eslint-disable-next-line no-underscore-dangle */}
