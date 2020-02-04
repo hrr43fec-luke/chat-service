@@ -19,8 +19,7 @@ describe('', () => {
     request(app)
       .get('/api/chats/2')
       .expect(200)
-      .expect('Content-Type', /json/)
-      .expect(/Cynthia_Wilderman/, done);
+      .expect('Content-Type', /json/, done);
   });
 
   it('serves up index.html', (done) => {

@@ -11,7 +11,7 @@
     "build:dev": "webpack --watch --mode development",
     "build": "webpack --mode production",
     "test": "jest",
-    "seed": "mongoimport --port=27017 --db=luke-chat --collection=chats --file=./db/standardData.json",
+    "seed": "mongoimport --port=27017 --db=luke-chat --collection=chats --file=./db/standardData.csv --type=csv --headerline",
     "makeFakeData": "node db/fakeTheData.js",
     "expressDebugOn": "export DEBUG=express:*",
     "expressDebugOff": "export DEBUG="
