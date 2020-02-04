@@ -4,12 +4,19 @@
 
 MongoDB is required. Default port (27017.) If your database has a username and password, you can set it in the ".env" file in the root of the project.
 
-After installing node modules,
+### A .env is required in the root directory. Example:
+- SERVER_PORT=3002   
+- DB_HOST=localhost
+- DB_PORT=27017
+- DB_USER=              // this may be left blank
+- DB_PWD=              // this may be left blank
+
+### After installing node modules,
 1. npm run build
 2. npm run seed (this will put a bunch of data in the DB)
 3. optionally run npm test --coverage (to see if everything is working)
 
-npm run start will run nodemon on port 3002 (i.e. localhost:3002 will bring up the module)
+npm run start    // will run nodemon on port 3002 (i.e. localhost:3002 will bring up the module)
 
 You can look at different sets of data for videos 1-10 like this:
 localhost:3002/?2
