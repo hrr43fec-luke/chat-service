@@ -2,11 +2,11 @@
 
 ## Getting started
 
-MongoDB is required. Default port (27017.) If your database has a username and password, you can set it in the ".env" file in the root of the project.
+MongoDB is required.
 
 ### A .env is required in the root directory. Example:
-- SERVER_PORT=3002   
-- DB_HOST=localhost
+- SERVER_PORT=3002   // this is where node will serve the website
+- DB_HOST=localhost  // the rest is for MongoDB
 - DB_PORT=27017
 - DB_USER=              // this may be left blank
 - DB_PWD=              // this may be left blank
