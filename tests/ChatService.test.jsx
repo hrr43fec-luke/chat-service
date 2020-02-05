@@ -2,12 +2,12 @@ import { shallow, configure } from 'enzyme';
 import React from 'react';
 import Adapter from 'enzyme-adapter-react-16';
 
-import App from '../client/App';
+import ChatService from '../client/ChatService';
 
 configure({ adapter: new Adapter() });
 
-describe('<App />', () => {
-  const wrapper = shallow(<App userId={2} />);
+describe('<ChatService />', () => {
+  const wrapper = shallow(<ChatService userId={2} />);
 
   it('renders Header and Chats', () => {
     expect(wrapper.debug()).toMatch('<Header');

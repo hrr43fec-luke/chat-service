@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   entry: './client/index.jsx',
   output: {
-    filename: 'main.js',
+    filename: 'ChatService.js',
     path: path.resolve(__dirname, 'www'),
   },
   devtool: 'source-map',
