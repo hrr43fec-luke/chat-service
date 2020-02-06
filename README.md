@@ -2,8 +2,11 @@
 
 ## Technical notes
 - "height: 100%" must start at the top and make it's way down to the App component
--- So in index.html, you'll see <html style="height:100%">, <body style="height:100%">, and <div style="height:100%" id="chat-service">
--- If you are putting this service inside a proxy and cannot update html and body because it would conflict with other components, consider doing a height: 100vh, perhaps like <div style="height:100vh" id="chat-service">
+- So in index.html, you'll see:
+- \<html style="height:100%">,
+- \<body style="height:100%">, and 
+- \<div style="height:100%" id="chat-service">
+- If you are putting this service inside a proxy and cannot update html and body because it would conflict with other components, consider doing a height: 100vh, perhaps like \<div style="height:100vh" id="chat-service">
   
 ## Getting started
 
