@@ -12,6 +12,7 @@ const StyledChats = styled.div`
   overflow: auto;
   display: flex;
   flex-direction: column;
+  background-color: rgb(239, 239, 241);
 `;
 
 class Chats extends React.Component {
