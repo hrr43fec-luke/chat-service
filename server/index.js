@@ -5,11 +5,12 @@ const db = require('../db');
 const router = require('./router');
 
 const app = express();
-const port = env.serverPort;
+const { port } = env;
 
 app.use(router);
 
 db.connect()
   .then(() => {
-    app.listen(port, null);
+    // eslint-disable-next-line no-console
+    app.listen(port, () => console.log('Listening on port ', port));
   });
