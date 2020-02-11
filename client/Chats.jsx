@@ -7,12 +7,14 @@ const api = require('../server/api');
 
 const StyledChats = styled.div`
   font-family: Roobert, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   height: 100%;
   overflow: auto;
   display: flex;
   flex-direction: column;
   background-color: rgb(239, 239, 241);
+  background-color: black;
+  color: white;
 `;
 
 class Chats extends React.Component {

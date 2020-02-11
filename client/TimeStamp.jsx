@@ -7,6 +7,7 @@ const formatTime = require('./formatTime');
 
 const StyledTimeStamp = styled.span`
   color: #1f1f23;
+  color: white;
   position: relative;  
   display: inline-block;
   font-size: 11px;
