@@ -9,19 +9,22 @@ const Message = require('./Message.jsx');
 
 const StyledChat = styled.section`
   display: flex;
-  margin-bottom: 4px;
+`;
+
+const StyledSpan = styled.span`
+  padding-bottom: 10px;
 `;
 
 function Chat({ chat }) {
   return (
     <StyledChat>
       <TimeStamp timeStamp={chat.timeStamp} />
-      <span>
+      <StyledSpan>
         <Badge badge={chat.badge} badgeText={chat.badgeText} />
         <DisplayName displayName={chat.displayName} displayNameColor={chat.displayNameColor} />
         {': '}
         <Message message={chat.message} />
-      </span>
+      </StyledSpan>
     </StyledChat>
   );
 }

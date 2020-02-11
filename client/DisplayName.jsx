@@ -6,6 +6,8 @@ const StyledDisplayName = styled.span`
   color: ${(props) => props.color};
   text-decoration: ${(props) => (props.hover ? 'underline' : '')};
   cursor: ${(props) => (props.hover ? 'pointer' : '')};
+  background-color: black;
+  font-weight: 900;
 `;
 
 class DisplayName extends React.Component {
