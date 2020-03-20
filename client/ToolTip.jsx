@@ -5,8 +5,8 @@ const { default: styled } = require('styled-components');
 const StyledToolTip = styled.span`
   visibility: ${(props) => (props.hidden ? 'hidden' : 'visible')};
   font-size: 12px;
-  background: black;
-  color: white;
+  background: white;
+  color: black;
   white-space: nowrap;
   padding: 2px 3px 5px 3px;
   margin-top: 3px;
